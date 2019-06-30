@@ -8,6 +8,11 @@ namespace JobSequenceGenerator
 {
     public class JobEngine
     {
+        /// <summary>
+        /// This method is used to generate the sequence as per the provided job inputs
+        /// </summary>
+        /// <param name="inputJobArr"></param>
+        /// <returns>Job execution Sequence in string format</returns>
         public string GenerateJobSequence(string[] inputJobArr)
         {
             try
@@ -63,10 +68,16 @@ namespace JobSequenceGenerator
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception : " + ex.Message);
+                Console.WriteLine("Exception - GenerateJobSequence : " + ex.Message);
                 return ValidationStatus.Invalid_Job.ToString();
             }
         }
+
+        /// <summary>
+        /// This method is used to validate the input job sequence.
+        /// </summary>
+        /// <param name="inputJobArr"></param>
+        /// <returns>ValidationStatus -Validation message <ENUM></returns>
         private ValidationStatus ValidateInput(string[] inputJobArr)
         {
             try
@@ -89,7 +100,7 @@ namespace JobSequenceGenerator
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception : " + ex.Message);
+                Console.WriteLine("Exception - ValidateInput : " + ex.Message);
                 return ValidationStatus.Invalid_Job;
             }
         }
