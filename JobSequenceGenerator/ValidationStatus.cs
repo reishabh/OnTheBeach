@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JobProcessing
+namespace JobSequenceGenerator
 {
     public enum ValidationStatus
     {
         Success = 0,
         No_Jobs = 1,
         Invalid_Job = 2,
-        Jobs_Cannot_Depend_On_Themselves = 3,
-        Circular_Reference = 4
+        Jobs_cannot_depend_on_themselves = 3,
+        Jobs_cannot_have_circular_dependencies = 4,
+        Invalid_job_input_format = 5
     }
 }

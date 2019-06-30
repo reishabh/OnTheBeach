@@ -1,4 +1,4 @@
-﻿namespace JobProcessing
+﻿namespace JobSequenceGenerator
 {
     public class JobModel
     {
